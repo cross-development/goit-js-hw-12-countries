@@ -37,7 +37,7 @@ function buildCountryInfoMarkup(countries) {
     });
   }
 
-  let markup = [];
+  const markup = [];
 
   if (countries.length > 1 && countries.length < 10) {
     markup = countries.map(country => `<li>${country.name}</li>`).join('');
@@ -49,7 +49,7 @@ function buildCountryInfoMarkup(countries) {
 }
 
 function clearInputs() {
-  refs.input.value = '';
+//refs.input.value = '';
   refs.countryInfo.innerHTML = '';
   refs.countriesList.innerHTML = '';
 }
