@@ -1,5 +1,5 @@
 'use strict';
-const debounce = require('lodash.debounce');
+import debounce from 'lodash.debounce';
 import { error, Stack } from '@pnotify/core';
 import createCountryMarkup from '../templates/country-info-template.hbs';
 import fetchCountries from './fetchCountries';
@@ -37,7 +37,7 @@ function buildCountryInfoMarkup(countries) {
     });
   }
 
-  const markup = [];
+  let markup;
 
   if (countries.length > 1 && countries.length < 10) {
     markup = countries.map(country => `<li>${country.name}</li>`).join('');
@@ -49,7 +49,6 @@ function buildCountryInfoMarkup(countries) {
 }
 
 function clearInputs() {
-//refs.input.value = '';
   refs.countryInfo.innerHTML = '';
   refs.countriesList.innerHTML = '';
 }
